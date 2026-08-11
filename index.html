@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="EPICPAGES - Creative Webpage Development and Multi-Web Solutions">
+
+    <title>EPICPAGES | Webpage Development</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            min-height: 100%;
+        }
+
+
+        /* =========================
+           ANIMATED BACKGROUND
+        ========================= */
+
+        body {
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #08001f,
+                    #17005c,
+                    #002b5c,
+                    #004d40,
+                    #27004d
+                );
+
+            background-size: 400% 400%;
+
+            animation: backgroundMove 12s ease infinite;
+
+            overflow-x: hidden;
+        }
+
+
+        @keyframes backgroundMove {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+
+        /* Floating glowing shapes */
+
+        .orb {
+
+            position: fixed;
+
+            width: 220px;
+            height: 220px;
+
+            border-radius: 50%;
+
+            filter: blur(20px);
+
+            opacity: 0.35;
+
+            z-index: -1;
+
+            animation: float 8s ease-in-out infinite;
+
+        }
+
+
+        .orb1 {
+
+            background: #ff00cc;
+
+            top: 10%;
+            left: 5%;
+
+        }
+
+
+        .orb2 {
+
+            background: #00eaff;
+
+            bottom: 10%;
+            right: 5%;
+
+            animation-delay: 2s;
+
+        }
+
+
+        .orb3 {
+
+            background: #8cff00;
+
+            top: 50%;
+            left: 45%;
+
+            animation-delay: 4s;
+
+        }
+
+
+        @keyframes float {
+
+            0%, 100% {
+
+                transform:
+                    translate(0, 0)
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    translate(60px, -40px)
+                    scale(1.25);
+
+            }
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 20px 7%;
+
+            background: rgba(0,0,0,0.25);
+
+            backdrop-filter: blur(10px);
+
+        }
+
+
+        nav .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        nav span {
+
+            color: #00eaff;
+
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+
+            min-height: 80vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(50px, 9vw, 100px);
+
+            margin: 0;
+
+            letter-spacing: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00eaff,
+                    #ff00cc,
+                    #fff700,
+                    #00ff88
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation: textMove 5s linear infinite;
+
+        }
+
+
+        @keyframes textMove {
+
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+
+        }
+
+
+        .subtitle {
+
+            font-size: clamp(22px, 4vw, 35px);
+
+            margin: 10px 0 25px;
+
+            color: #ffffff;
+
+        }
+
+
+        .hero p {
+
+            max-width: 750px;
+
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            color: #eeeeee;
+
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+
+        }
+
+
+        .btn {
+
+            padding: 16px 30px;
+
+            border-radius: 50px;
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            background: rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(8px);
+
+            transition: 0.3s;
+
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-5px) scale(1.04);
+
+            background: rgba(255,255,255,0.25);
+
+            box-shadow:
+                0 0 20px rgba(255,255,255,0.4);
+
+        }
+
+
+        .create {
+
+            background: #00a86b;
+
+            border-color: #00ff9d;
+
+        }
+
+
+        .index {
+
+            background: #0066ff;
+
+            border-color: #00c8ff;
+
+        }
+
+
+        .multi {
+
+            background: #8e00ff;
+
+            border-color: #e000ff;
+
+        }
+
+
+        /* =========================
+           FEATURE SECTION
+        ========================= */
+
+        .features {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 40px 20px 80px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .feature {
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.10);
+
+            border:
+                1px solid rgba(255,255,255,0.2);
+
+            backdrop-filter: blur(12px);
+
+            transition: 0.3s;
+
+        }
+
+
+        .feature:hover {
+
+            transform: translateY(-8px);
+
+            background:
+                rgba(255,255,255,0.18);
+
+        }
+
+
+        .feature h3 {
+
+            font-size: 22px;
+
+        }
+
+
+        .feature p {
+
+            line-height: 1.6;
+
+            color: #ddd;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            background:
+                rgba(0,0,0,0.35);
+
+            color: #ccc;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .features {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            nav {
+
+                justify-content: center;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Animated background -->
+
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            EPIC<span>PAGES</span>
+        </div>
+
+        <div>
+            Web Development
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <h1>EPICPAGES</h1>
+
+        <div class="subtitle">
+            Webpage Development
+        </div>
+
+
+        <p>
+
+            Your idea deserves more than a basic webpage.
+
+            <br><br>
+
+            At <strong>EPICPAGES</strong>, we transform ideas,
+            businesses and services into engaging digital
+            experiences designed to make visitors stop,
+            explore and remember.
+
+            <br><br>
+
+            From a simple business presence to powerful
+            multi-page web solutions — let's build your
+            place on the internet.
+
+        </p>
+
+
+        <!-- Main buttons -->
+
+        <div class="buttons">
+
+            <a
+                href="create.html"
+                class="btn create">
+
+                CREATE WEBPAGE
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="btn index">
+
+                INDEX WEBSITE
+
+            </a>
+
+
+            <a
+                href="solutions.html"
+                class="btn multi">
+
+                MULTI WEB SOLUTIONS
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+
+    <section class="features">
+
+
+        <div class="feature">
+
+            <h3>✨ Creative Design</h3>
+
+            <p>
+                Modern layouts, animations and interactive
+                elements designed to give your website
+                its own identity.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>⚡ Fast & Responsive</h3>
+
+            <p>
+                Websites designed to work smoothly across
+                desktops, tablets and mobile devices.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>🌐 Multi-Web Solutions</h3>
+
+            <p>
+                Connect multiple pages and services into
+                one organized digital experience.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Burman Ventures Pvt. Ltd.
+        All Rights Reserved.
+
+        <br><br>
+
+        EPICPAGES — Webpage Development
+
+    </footer>
+
+
+</body>
+
+</html>
